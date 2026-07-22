@@ -1,0 +1,161 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+
+body{
+
+    background:#f4f8fb;
+
+}
+
+
+
+header{
+
+    background:#0077b6;
+
+    color:white;
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:15px;
+
+}
+
+
+
+.bienvenida{
+
+    text-align:center;
+
+    padding:50px;
+
+}
+
+
+
+.bienvenida h2{
+
+    color:#0077b6;
+
+    font-size:35px;
+
+}
+
+
+
+button{
+
+    background:#0096c7;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    margin-top:20px;
+
+    border-radius:5px;
+
+}
+
+
+
+.servicios{
+
+    padding:40px;
+
+    text-align:center;
+
+}
+
+
+
+.tarjetas{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    width:250px;
+
+    box-shadow:0 0 10px gray;
+
+}
+
+
+
+.contacto{
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    width:300px;
+
+    margin:auto;
+
+}
+
+
+
+input,textarea{
+
+    margin:10px;
+
+    padding:10px;
+
+}
+
+
+
+footer{
+
+    background:#023e8a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+}

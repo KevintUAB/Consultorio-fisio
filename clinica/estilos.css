@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -16,74 +16,115 @@ body{
 
 header{
 
-    background:#0077b6;
+    background: linear-gradient(135deg,#0077b6,#00b4d8);
+    height:90px;
+    padding:0 60px;
 
-    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    padding:20px;
+    position:sticky;
+    top:0;
 
-    text-align:center;
+    z-index:1000;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
 
 }
 
+header h1{
+
+    font-size:38px;
+
+    color:white;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:60px;
+
+    height:60px;
+
+}
+
+.logo h1{
+
+    font-size:34px;
+
+    color:white;
+
+}
 
 
 nav a{
 
     color:white;
-
     text-decoration:none;
-
-    margin:15px;
-
+    font-size:18px;
+    font-weight:600;
+    position:relative;
+    transition:.3s;
 }
 
 
 
-.bienvenida{
+.bienvenida
+{
 
     text-align:center;
-
-    padding:50px;
+    padding:60px 20px;
+    background:rgb(43, 193, 239);
 
 }
 
 
 
-.bienvenida h2{
+.bienvenida h2
+{
 
+    font-size:42px;
     color:#0077b6;
-
-    font-size:35px;
+    margin-bottom:20px;
 
 }
 
 
 
-button{
-
+button
+{
+     margin-top:30px;
     background:#0096c7;
-
     color:white;
-
     border:none;
-
-    padding:12px 25px;
-
-    margin-top:20px;
-
-    border-radius:5px;
-
+    padding:15px 35px;
+    font-size:16px;
+    border-radius:50px;
+    cursor:pointer;
+    transition:.3s;
 }
 
 
 
-.servicios{
-
-    padding:40px;
-
+.servicios
+{
+    padding:70px 20px;
     text-align:center;
-
 }
 
 .Tratamientos{
@@ -94,27 +135,24 @@ button{
 
 }
 
-.tarjetas{
-
+.tarjetas
+{
     display:flex;
-
     justify-content:center;
-
-    gap:20px;
-
+    gap:30px;
+    flex-wrap:wrap;
 }
 
 
 
 .card{
 
+    width:280px;
     background:white;
-
-    padding:25px;
-
-    width:250px;
-
-    box-shadow:0 0 10px gray;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
 
 }
 
@@ -122,9 +160,9 @@ button{
 
 .contacto{
 
+     background:#eaf6fb;
+    padding:70px 20px;
     text-align:center;
-
-    padding:40px;
 
 }
 
@@ -146,9 +184,12 @@ form{
 
 input,textarea{
 
-    margin:10px;
-
-    padding:10px;
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:15px;
 
 }
 
@@ -157,11 +198,9 @@ input,textarea{
 footer{
 
     background:#023e8a;
-
     color:white;
-
     text-align:center;
-
     padding:20px;
+    margin-top:40px;
 
 }

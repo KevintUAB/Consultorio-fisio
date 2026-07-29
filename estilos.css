@@ -58,8 +58,8 @@ header h1{
 .logo img{
 
     width:60px;
-
     height:60px;
+    object-fit: contain;
 
 }
 
@@ -71,18 +71,23 @@ header h1{
 
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    }
 
 nav a{
-
     color:white;
     text-decoration:none;
     font-size:18px;
     font-weight:600;
-    position:relative;
     transition:.3s;
-    
 }
 
+nav a:hover{
+    color:#ffd166;
+}
 
 
 .bienvenida
@@ -118,6 +123,7 @@ button
     border-radius:50px;
     cursor:pointer;
     transition:.3s;
+    transform: scale(1.05);
 }
 
 
@@ -203,5 +209,53 @@ footer{
     text-align:center;
     padding:20px;
     margin-top:40px;
+
+}
+
+
+/*responsive, el responsive debo colocarlo al final ya que estos se encargan de adaptar la visibilidad a dispositivos moviles*/
+@media (max-width:768px){
+
+    header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .logo{
+        margin-bottom:20px;
+    }
+
+    nav{
+        flex-direction: column;
+        gap:15px;
+        width:100%;
+        text-align: center;
+    }
+
+    .tarjetas{
+        flex-direction: column;
+        align-items:center;
+    }
+
+    .card{
+        width:90%;
+    }
+
+    .bienvenida,
+    .servicios,
+    .contacto{
+        padding:40px 20px;
+    }
+
+    .bienvenida h2{
+        font-size:30px;
+    }
+
+    .bienvenida p{
+        font-size:16px;
+    }
 
 }

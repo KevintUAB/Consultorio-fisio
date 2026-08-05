@@ -34,7 +34,7 @@
 
         <a href="#">Citas</a>
 
-        <a href="#">Contacto</a>
+        <!--<a href="#">Contacto</a> --->
 
     </nav>
     <button id="modo">🌙 Modo oscuro</button>
@@ -48,12 +48,12 @@
         Recupera tu movilidad y mejora tu calidad de vida con nuestros especialistas en fisioterapia y kinesiología,
         preparados para cuidar de ti y tu familia.
     </p>
-    <button>
+    <!--<button>
         Solicitar cita
-    </button>
+    </button>-->
 </section>
 
-
+<main>
 <section class="servicios">
    <h2>Nuestros Servicios</h2>
    <div class="tarjetas">
@@ -102,7 +102,7 @@
 </section>
 
 
-<section class="contacto">
+<!--<section class="contacto">
     <h2>Contáctanos</h2>
     <form>
         <input type="text" placeholder="Nombre">
@@ -110,10 +110,38 @@
         <textarea placeholder="Dinos en que podemos ayudarte"></textarea>
 
         <button>
-         Enviar
+            Enviar
         </button>
     </form>
 </section>
+-->
+
+
+
+<section id="contacto" class="tarjeta">
+    <h2>Reserva tu cita</h2>
+    <p>¿En que podemos ayudarte? Escríbenos.</p>
+
+    
+    <form id="form-pedido" novalidate>
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required>
+
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="tunombre@correo.com" required>
+
+        <label for="pedido">Tu pedido</label>
+        <textarea id="pedido" name="pedido" rows="4" placeholder="Cuéntanos qué necesitas"></textarea>
+
+        <button type="submit">Enviar pedido</button>
+
+        
+        <p id="error-pedido" class="aviso"></p>
+    </form>
+</section>
+
+</main>
+
 
 <footer>
     <p>

@@ -6,3 +6,8 @@ function confirmarTurno()
 }
 let boton = document.querySelector("#btn-confirmar");
 boton.addEventListener("click", confirmarTurno);
+
+
+
+
+

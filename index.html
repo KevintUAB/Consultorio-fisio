@@ -123,7 +123,8 @@
     <p>¿En que podemos ayudarte? Escríbenos.</p>
 
     
-    <form id="form-pedido" novalidate>
+    <form id="form-pedido" novalidate
+        method="POST" action="procesar.php">
         <label for="nombre">Nombre completo</label>
         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required>
 

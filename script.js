@@ -26,13 +26,15 @@ function revisarPedido(event)
 {
   // Freno de mano: sin esta línea la página se recarga y no
   // llegamos ni a revisar. Es LA línea nueva del día.
-    event.preventDefault();
+    
 
     // .value es lo que hay escrito adentro de la casilla, ahora.
     const nombre = document.querySelector("#nombre").value;
     const correo = document.querySelector("#correo").value;
 
     if (nombre === "") {
+
+    event.preventDefault();
     // Dos comillas pegadas significan "texto vacío": no escribió nada.
     avisoPedido.textContent = "Falta tu nombre, caserito.";
     avisoPedido.classList.add("error");
@@ -40,6 +42,7 @@ function revisarPedido(event)
     } else if (correo.includes("@") === false) {
     // includes revisa si un texto contiene otro. No comprueba que
     // el correo exista: comprueba que PAREZCA un correo.
+    event.preventDefault();
     avisoPedido.textContent = "Ese correo no parece correo: le falta el @.";
     avisoPedido.classList.add("error");
     avisoPedido.classList.remove("exito");
@@ -55,7 +58,6 @@ function revisarPedido(event)
 // reaccionar. Lo único que cambia es el nombre del evento.
 // Y la función va SIN paréntesis, como siempre.
 formularioPedido.addEventListener("submit", revisarPedido);
-
 
 
 

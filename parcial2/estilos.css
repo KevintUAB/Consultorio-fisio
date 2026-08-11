@@ -1,0 +1,52 @@
+body {
+font-family: Arial, sans-serif;
+max-width: 800px;
+margin: 40px auto;
+padding: 20px;
+}
+
+header {
+text-align: center;
+margin-bottom: 30px;
+}
+
+form {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+input,
+textarea {
+padding: 10px;
+font-size: 16px;
+}
+
+textarea {
+min-height: 100px;
+}
+
+button {
+padding: 12px;
+font-size: 16px;
+cursor: pointer;
+}
+
+footer {
+margin-top: 40px;
+text-align: center;
+}
+
+.aviso {
+display: none;
+}
+
+.aviso.error {
+display: block;
+color: #b00020;
+}
+
+.aviso.exito {
+display: block;
+color: #1b7f3b;
+}

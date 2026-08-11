@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Óptica Mirasol</title>
+
+<link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+<header>
+    <h1>Óptica Mirasol</h1>
+
+    <p>
+        En Óptica Mirasol te ayudamos a cuidar tu visión y encontrar
+        las mejores opciones para tus necesidades visuales.
+    </p>
+</header>
+
+<main>
+
+    <form id="form-cita" novalidate method="POST" action="procesar.php">
+
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="consulta">Contanos qué necesitás</label>
+        <textarea id="consulta" name="consulta"></textarea>
+
+        <button type="submit">Pedir mi cita</button>
+
+        <p id="aviso-cita" class="aviso"></p>
+
+    </form>
+
+</main>
+
+<footer>
+    Parcial 2 - Kevin Yasmani Toledo Apulaca - 11 de agosto de 2026
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

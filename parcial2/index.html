@@ -4,49 +4,45 @@
 
 <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Óptica Mirasol</title>
-
-<link rel="stylesheet" href="estilos.css">
+    <title>Óptica Mirasol</title>
+    <link rel="stylesheet" href="estilos.css">
 
 </head>
 
 <body>
+    <header>
+        <h1>Óptica Mirasol</h1>
+        <p>
+            En Óptica Mirasol te ayudamos a cuidar tu visión y encontrar
+            las mejores opciones para tus ojitos.
+        </p>
+    </header>
 
-<header>
-    <h1>Óptica Mirasol</h1>
+    <main>
 
-    <p>
-        En Óptica Mirasol te ayudamos a cuidar tu visión y encontrar
-        las mejores opciones para tus necesidades visuales.
-    </p>
-</header>
+        <form id="form-cita" novalidate method="POST" action="procesar.php">
 
-<main>
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-    <form id="form-cita" novalidate method="POST" action="procesar.php">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" required>
 
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" required>
+            <label for="consulta">Contanos qué necesitás</label>
+            <textarea id="consulta" name="consulta"></textarea>
 
-        <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo" name="correo" required>
+            <button type="submit">Pedir mi cita</button>
 
-        <label for="consulta">Contanos qué necesitás</label>
-        <textarea id="consulta" name="consulta"></textarea>
+            <p id="aviso-cita" class="aviso"></p>
+        </form>
 
-        <button type="submit">Pedir mi cita</button>
+    </main>
 
-        <p id="aviso-cita" class="aviso"></p>
+    <footer>
+        Parcial 2 - Kevin Yasmani Toledo Apulaca - 11 de agosto de 2026
+    </footer>
 
-    </form>
-
-</main>
-
-<footer>
-    Parcial 2 - Kevin Yasmani Toledo Apulaca - 11 de agosto de 2026
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

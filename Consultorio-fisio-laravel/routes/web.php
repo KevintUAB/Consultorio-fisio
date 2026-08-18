@@ -10,7 +10,7 @@ use App\Http\Controllers\ProductoController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/inicio', function () {
+Route::get('/', function () {
 
     return view('inicio');
 

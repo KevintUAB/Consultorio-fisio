@@ -2,10 +2,11 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Productos - Clínica Fisio</title>
+
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
 </head>
 
@@ -18,13 +19,9 @@
         </div>
 
         <nav>
-
             <a href="{{ url('/') }}">Inicio</a>
-
             <a href="{{ url('/contacto') }}">Contacto</a>
-
-            <a href="{{ route('productos') }}">Productos</a>
-
+            <a href="{{ url('/productos') }}">Productos</a>
         </nav>
 
         <button id="modo">
@@ -33,55 +30,17 @@
 
     </header>
 
-
     <main>
 
         <section class="tarjeta">
 
             <h2>Registrar producto</h2>
-
-            <p>
-                Ingresa los datos del producto.
-            </p>
-
-
-            {{-- Mensaje de producto registrado correctamente --}}
-
             @if (session('producto_exitoso'))
-
                 <div class="aviso exito">
-
-                    {{ session('producto_exitoso') }}
-
+                    {{session('producto_exitoso') }}
                 </div>
-
             @endif
-
-
-            {{-- Errores de validación --}}
-
-            @if ($errors->any())
-
-                <div class="aviso error">
-
-                    <strong>Hay algunos errores:</strong>
-
-                    <ul>
-
-                        @foreach ($errors->all() as $error)
-
-                            <li>{{ $error }}</li>
-
-                        @endforeach
-
-                    </ul>
-
-                </div>
-
-            @endif
-
-
-            <form method="POST" action="/productos">
+            <form method="POST" action="{{ url('/productos') }}">
 
                 @csrf
 
@@ -93,10 +52,9 @@
                     type="text"
                     id="nombre"
                     name="nombre"
-                    placeholder="Ej. Crema muscular"
+                    placeholder="Nombre del producto"
                     value="{{ old('nombre') }}"
                 >
-
 
                 <label for="precio">
                     Precio
@@ -106,12 +64,10 @@
                     type="number"
                     id="precio"
                     name="precio"
-                    placeholder="Ej. 50.00"
                     step="0.01"
-                    min="0"
+                    placeholder="0.00"
                     value="{{ old('precio') }}"
                 >
-
 
                 <button type="submit">
                     Registrar producto
@@ -120,24 +76,43 @@
             </form>
 
         </section>
+        <section class="tarjeta">
 
+            <h2>Productos registrados</h2>
+
+            @if ($productos->count() > 0)
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach ($productos as $producto)
+
+                        <tr>
+                            <td>{{ $producto->nombre }}</td>
+                            <td>Bs. {{ number_format($producto->precio, 2) }}</td>
+                        </tr>
+
+                    @endforeach
+
+                </tbody>
+
+            </table>
+
+            @else
+
+            <p>No hay productos registrados.</p>
+
+            @endif
+
+        </section>
     </main>
-
-
-    <footer>
-
-        <p>
-            © 2026 Clínica Fisio
-        </p>
-
-        <p>
-            Página de Facebook: Clínica Fisio
-            &nbsp;&nbsp;&nbsp;
-            Correo Electrónico: Clinica_Fisio@gmail.com
-        </p>
-
-    </footer>
-
 
     <script src="{{ asset('js/script.js') }}"></script>
 

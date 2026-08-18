@@ -60,9 +60,6 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])
     ->middleware('auth');
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Página de Productos

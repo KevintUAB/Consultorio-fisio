@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductoController;
 
 
 /*
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
+Route::get('/inicio', function () {
 
     return view('inicio');
 
@@ -43,3 +44,12 @@ Route::post('/contacto', function () {
         ->with('pedido_exitoso', $datos);
 
 });
+
+/*
+|--------------------------------------------------------------------------
+| Página de Productos
+|--------------------------------------------------------------------------
+*/
+
+Route:: get('/productos', [ProductoController::class, 'crear'])->name('productos');
+Route:: post('/productos', [ProductoController::class, 'guardar']);

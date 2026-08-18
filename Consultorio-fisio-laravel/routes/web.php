@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
-
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,11 +45,38 @@ Route::post('/contacto', function () {
 
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| Login
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/login', [LoginController::class, 'mostrarLogin'])
+    ->name('login');
+
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::post('/logout', [LoginController::class, 'logout'])
+    ->middleware('auth');
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Página de Productos
 |--------------------------------------------------------------------------
 */
+// Productos públicos
+Route::get('/productos', [ProductoController::class, 'index'])
+    ->name('productos');
 
-Route:: get('/productos', [ProductoController::class, 'crear'])->name('productos');
-Route:: post('/productos', [ProductoController::class, 'guardar']);
+// Formulario para nuevo producto - requiere login
+Route::get('/productos/nuevo', [ProductoController::class, 'nuevo'])
+    ->middleware('auth')
+    ->name('productos.nuevo');
+
+// Guardar producto - requiere login
+Route::post('/productos', [ProductoController::class, 'guardar'])
+    ->middleware('auth');

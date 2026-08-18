@@ -21,7 +21,7 @@
         <nav>
             <a href="{{ url('/') }}">Inicio</a>
             <a href="{{ url('/contacto') }}">Contacto</a>
-            <a href="{{ url('/productos') }}">Productos</a>
+            <a href="{{ route('productos') }}">Productos</a>
         </nav>
 
         <button id="modo">
@@ -32,86 +32,79 @@
 
     <main>
 
-        <section class="tarjeta">
+        {{-- Mensaje después de registrar un producto --}}
+        @if (session('producto_exitoso'))
 
-            <h2>Registrar producto</h2>
-            @if (session('producto_exitoso'))
-                <div class="aviso exito">
-                    {{session('producto_exitoso') }}
-                </div>
-            @endif
-            <form method="POST" action="{{ url('/productos') }}">
+            <div class="aviso exito">
+                {{ session('producto_exitoso') }}
+            </div>
 
-                @csrf
+        @endif
 
-                <label for="nombre">
-                    Nombre del producto
-                </label>
 
-                <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Nombre del producto"
-                    value="{{ old('nombre') }}"
-                >
-
-                <label for="precio">
-                    Precio
-                </label>
-
-                <input
-                    type="number"
-                    id="precio"
-                    name="precio"
-                    step="0.01"
-                    placeholder="0.00"
-                    value="{{ old('precio') }}"
-                >
-
-                <button type="submit">
-                    Registrar producto
-                </button>
-
-            </form>
-
-        </section>
         <section class="tarjeta">
 
             <h2>Productos registrados</h2>
 
             @if ($productos->count() > 0)
 
-            <table>
+                <table>
 
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                    @foreach ($productos as $producto)
+                    <thead>
 
                         <tr>
-                            <td>{{ $producto->nombre }}</td>
-                            <td>Bs. {{ number_format($producto->precio, 2) }}</td>
+                            <th>Nombre</th>
+                            <th>Precio</th>
                         </tr>
 
-                    @endforeach
+                    </thead>
 
-                </tbody>
+                    <tbody>
 
-            </table>
+                        @foreach ($productos as $producto)
+
+                            <tr>
+
+                                <td>
+                                    {{ $producto->nombre }}
+                                </td>
+
+                                <td>
+                                    Bs. {{ number_format($producto->precio, 2) }}
+                                </td>
+
+                            </tr>
+
+                        @endforeach
+
+                    </tbody>
+
+                </table>
 
             @else
 
-            <p>No hay productos registrados.</p>
+                <p>No hay productos registrados.</p>
 
             @endif
 
         </section>
+
+
+        {{-- Acceso al registro de productos --}}
+        <section class="tarjeta">
+
+            <h2>Administración</h2>
+
+            <p>
+                Para registrar un nuevo producto debes iniciar sesión.
+            </p>
+
+            <a href="{{ route('productos.nuevo') }}">
+                Registrar nuevo producto
+            </a>
+
+        </section>
+
     </main>
 
     <script src="{{ asset('js/script.js') }}"></script>

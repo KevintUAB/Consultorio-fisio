@@ -7,13 +7,21 @@ use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
-    public function crear()
+    // Mostrar productos públicamente
+    public function index()
     {
         $productos = Producto::all();
 
         return view('productos', compact('productos'));
     }
 
+    // Mostrar formulario para registrar producto
+    public function nuevo()
+    {
+        return view('productos_nuevo');
+    }
+
+    // Guardar producto
     public function guardar(Request $request)
     {
         $datos = $request->validate([

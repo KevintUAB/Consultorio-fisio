@@ -109,7 +109,6 @@ Route::post('/herramientas/nuevo', function () {
             'precio.integer' => 'El precio se anota solo con cifras.'
         ]
     );
-
     Herramienta::create($datos);
 
     return redirect('/herramientas');

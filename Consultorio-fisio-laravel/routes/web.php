@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\LoginController;
+use App\Models\Herramienta;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,3 +78,40 @@ Route::get('/productos/nuevo', [ProductoController::class, 'nuevo'])
 // Guardar producto - requiere login
 Route::post('/productos', [ProductoController::class, 'guardar'])
     ->middleware('auth');
+
+
+// Rutas de la Integradora - Ferretería El Tornillo
+
+Route::get('/herramientas', function () {
+
+    $herramientas = Herramienta::all();
+
+    return view('integradora.herramientas', compact('herramientas'));
+
+});
+
+Route::get('/herramientas/nuevo', function () {
+
+    return view('integradora.herramientas_nuevo');
+
+});
+
+Route::post('/herramientas/nuevo', function () {
+
+    $datos = request()->validate(
+        [
+            'nombre' => 'required',
+            'precio' => 'required|integer'
+        ],
+        [
+            'nombre.required' => 'Escribí el nombre de la herramienta.',
+            'precio.required' => 'Escribí el precio de la herramienta.',
+            'precio.integer' => 'El precio se anota solo con cifras.'
+        ]
+    );
+
+    Herramienta::create($datos);
+
+    return redirect('/herramientas');
+
+});

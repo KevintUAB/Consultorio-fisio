@@ -26,8 +26,15 @@ class ProductoController extends Controller
     {
         $datos = $request->validate([
             'nombre' => 'required|string|max:100',
-            'precio' => 'required|numeric|min:0'
-        ]);
+            'precio' => 'required|numeric|min:0',
+            'stock'=> 'required|integer|min:0'
+        ],
+        [
+            'stock.required' => 'El stock es obligatorio.',
+            'stock.integer' => 'el stock debe ser un numero entero.',
+            'stock.min' => 'el stock no puede ser negativo.'
+        ]
+        );
 
         Producto::create($datos);
 

@@ -113,6 +113,33 @@
                 required
             >
 
+            <label for="stock">
+                Stock disponible
+            </label>
+
+            <input
+                type="number"
+                id="stock"
+                name="stock"
+                min="0"
+                placeholder="Cantidad disponible"
+                value="{{ old('stock') }}"
+                required
+            >
+
+            <label for="stock">
+                Stock disponible
+            </label>
+
+            <input
+                type="number"
+                id="stock"
+                name="stock"
+                min="0"
+                placeholder="Cantidad disponible"
+                value="{{ old('stock') }}"
+                required
+            >
 
             <button type="submit">
                 Registrar producto

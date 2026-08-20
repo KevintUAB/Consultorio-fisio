@@ -55,6 +55,24 @@
             margin-bottom: 15px;
             border-radius: 5px;
         }
+
+        .boton-inicio {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            text-align: center;
+            text-decoration: none;
+            background-color: #e9ecef;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+.boton-inicio:hover {
+    background-color: #d6d8db;
+}
     </style>
 </head>
 
@@ -96,7 +114,9 @@
             <button type="submit">
                 Iniciar sesión
             </button>
-
+            <a href="{{ url('/') }}" class="boton-inicio">
+                ← Volver al inicio
+            </a>
         </form>
 
     </div>
